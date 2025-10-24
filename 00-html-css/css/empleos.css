@@ -436,7 +436,7 @@ body > footer {
   border-bottom: none; /* El último no necesita línea */
 }
 
-.search-results .apply-btn {
+.search-results .boton-aplicar {
   border: var(--primary-light);
   background: var(--primary-light);
   color: white;
@@ -448,7 +448,7 @@ body > footer {
   font-size: 1rem;
 }
 
-.search-results .apply-btn:hover {
+.search-results .boton-aplicar:hover {
   background-color: var(--primary-hover);
   transform: scale(1.05);
 }

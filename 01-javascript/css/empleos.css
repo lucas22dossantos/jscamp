@@ -446,24 +446,38 @@ body > footer {
   &:last-child {
     border-bottom: none;
   }
+}
 
-  button {
-    border: var(--primary-light);
-    background: var(--primary-light);
-    color: white;
-    padding: 0.8rem 1.6rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.2s, color 0.2s, transform 0.2s;
-    font-size: 1rem;
-    order: 1;
+.boton-aplicar {
+  border: none;
+  background: var(--primary-light);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  font-size: 1rem;
+}
 
-    &:hover {
-      background-color: var(--primary-hover);
-      transform: scale(1.05);
-    }
-  }
+.boton-aplicar:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.boton-aplicar:disabled,
+.boton-aplicar.is-applied {
+  background: #4caf50;
+  color: #fff;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.8;
+  transform: none;
+}
+
+.boton-aplicar:disabled:hover {
+  background: #4caf50;
+  transform: none;
 }
 
 /* -------------------------------- Paginación --------------------------------------------- */

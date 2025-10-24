@@ -1,63 +1,14 @@
-// recupera solo el primer boton que encuentre
-// const boton = document.querySelector('.button-apply-job')
-// console.log(boton) // null si no lo encuentra
+// boton de aplicar
+const jobsListingsSection = document.querySelector(".jobs-listings");
 
-// if (boton !== null) {
-//   boton.addEventListener('click', function() {
-//     boton.textContent = '¡Aplicado!'
-//     boton.classList.add('is-applied')
-//     boton.disabled = true
-//   })
-// }
-
-// const botones = document.querySelectorAll('.button-apply-job')
-// // devuelve un NodeList (array-like) con todos los botones que encuentre
-// // o una lista vacia [] si no encuentra ninguno
-
-// botones.forEach(boton => {
-//   boton.addEventListener('click', function() {
-//     boton.textContent = '¡Aplicado!'
-//     boton.classList.add('is-applied')
-//     boton.disabled = true
-//   })
-// })
-
-document.addEventListener("DOMContentLoaded", function () {
-  const jobsListingSection = document.querySelector(".jobs-listings");
-  if (jobsListingSection) {
-    jobsListingSection.addEventListener("click", function (event) {
-      const element = event.target;
-      if (element.classList.contains("apply-btn")) {
-        // Cambiado aquí
-        element.textContent = "¡Aplicado!";
-        element.classList.add("is-applied");
-        element.disabled = true;
-      }
-    });
-  }
-
-  const filter = document.querySelector("#filter-technology");
-  if (filter) {
-    filter.addEventListener("change", function () {
-      console.log(filter.value);
-    });
-  }
-});
-
-const jobsListingSection = document.querySelector(".jobs-listings");
-
-jobsListingSection.addEventListener("click", function (event) {
+jobsListingsSection.addEventListener("click", function (event) {
   const element = event.target;
 
-  if (element.classList.contains("button-apply-job")) {
-    element.textContent = "¡Aplicado!";
+  if (element.classList.contains("boton-aplicar")) {
+    element.textContent = "Aplicado!";
     element.classList.add("is-applied");
+    element.style.cursor = "not-allowed"; // solo un click
     element.disabled = true;
   }
 });
-
-const filter = document.querySelector("#filter-technology");
-
-filter.addEventListener("change", function () {
-  console.log(filter.value);
-});
+//  --------------------
