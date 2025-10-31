@@ -37,7 +37,7 @@
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-        <form role="search">
+        <form id="empleos-search-form" role="search">
           <div class="search-box">
             <span class="icon">
               <svg
@@ -59,6 +59,7 @@
             </span>
 
             <input
+              id="empleado-search-Input"
               required
               type="text"
               placeholder="Buscar empleos por título, habilidad o empresa"
@@ -68,7 +69,7 @@
           </div>
         </form>
 
-        <!-- 🔽 Filtros debajo del buscador -->
+        <!--  Filtros debajo del buscador -->
         <div class="filters">
           <select name="tecnologia" id="filtro-tecnologia">
             <option value="">Tecnología</option>

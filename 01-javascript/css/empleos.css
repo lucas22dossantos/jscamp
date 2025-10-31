@@ -59,7 +59,6 @@ h1 + p {
 
 /* Header */
 header {
-  /* border-bottom: 1px solid var(--border); */
   background: var(--background);
   padding: 0.5rem 1rem;
   display: flex;
@@ -74,7 +73,6 @@ header {
   }
 }
 
-/* Navegación del header a otras páginas */
 nav {
   align-items: center;
   gap: 1rem;
@@ -82,7 +80,7 @@ nav {
 
   gap: 1rem;
   justify-content: flex-start;
-  margin-right: auto; /* 👈 esto lo empuja hacia la izquierda */
+  margin-right: auto;
   a {
     text-decoration: none;
     color: var(--text-secondary);
@@ -242,7 +240,7 @@ form button[type="submit"]:focus {
   max-width: 1000px;
 }
 
-/* 🔍 Buscador */
+/* Buscador */
 .search-box {
   display: flex;
   align-items: center;
@@ -295,7 +293,7 @@ form button[type="submit"]:focus {
   background-color: var(--primary-hover);
 }
 
-/* 🎯 Filtros */
+/* Filtros */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -307,22 +305,32 @@ form button[type="submit"]:focus {
   margin-right: auto;
 }
 
-.filters select {
-  padding: 0.6rem 1rem;
+select {
+  padding: 0.625rem 1.25rem;
+  background: #242d3a;
+  border: 0;
   border-radius: 0.5rem;
-  border: 1px solid var(--border, #ccc);
-  background-color: var(--card-bg, #fff);
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.875rem;
+  color: #ddd;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  /* padding-right: 2.5rem; */
+
+  &:hover {
+    background-color: var(--primary-hover);
+    color: white;
+  }
+
+  &:focus {
+    outline: 2px solid #1173d4;
+    outline-offset: 2px;
+  }
 }
 
-.filters select:hover {
+/* .filters select:hover {
   border-color: var(--primary);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Features Section */
 main > section:nth-child(2) {
@@ -421,6 +429,7 @@ body > footer {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
 
+  /* article  */
   article {
     background: none;
     box-shadow: none;
@@ -432,6 +441,10 @@ body > footer {
     gap: 1rem;
 
     justify-content: space-between;
+
+    &.is-hidden {
+      display: none;
+    }
 
     &:small {
       font-size: 0.875rem;

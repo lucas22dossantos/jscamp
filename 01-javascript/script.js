@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterUbi = document.querySelector("#filtro-ubicacion");
   const filterTip = document.querySelector("#filtro-tipo");
   const filterExp = document.querySelector("#filtro-experiencia");
-  const searchInput = document.querySelector(".search-box input");
-  const searchForm = document.querySelector('form[role="search"]');
+  const searchInput = document.querySelector("#empleado-search-Input");
+  const searchForm = document.querySelector("#empleos-search-form");
 
   const resultsTitle = document.querySelector(".search-results header h2");
   const jobsContainer = document.querySelector(".jobs-listings");
@@ -47,15 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const matchExp = !filtros.experiencia || filtros.experiencia === cardExp;
       const matchText = !filtros.q || cardText.includes(filtros.q);
 
-      const visible =
-        matchTec && matchUbi && matchTipo && matchExp && matchText;
+      const isShow = matchTec && matchUbi && matchTipo && matchExp && matchText;
 
-      if (visible) {
-        card.style.display = "";
-        visibles++;
-      } else {
-        card.style.display = "none";
-      }
+      card.classList.toggle("is-hidden", !isShow);
     });
 
     if (resultsTitle)
